@@ -1,0 +1,43 @@
+# Create main project directory
+mkdir waterlily-survey-app
+cd waterlily-survey-app
+
+# Create backend and frontend folders
+mkdir backend frontend
+
+# Initialize backend package.json
+cd backend
+npm init -y
+
+# Initialize frontend with React and TypeScript
+cd frontend
+npx create-react-app . --template typescript
+
+
+cd backend
+
+# Install production dependencies
+npm install express cors bcryptjs jsonwebtoken dotenv sqlite3
+npm install @types/node @types/express @types/cors @types/bcryptjs @types/jsonwebtoken
+
+# Install development dependencies
+npm install -D typescript ts-node-dev nodemon
+
+# Install Prisma ORM
+npm install -D prisma
+npm install @prisma/client
+
+
+
+# Initialize Prisma with SQLite
+npx prisma init --datasource-provider SQLite
+
+
+
+cd frontend
+
+# Install additional dependencies
+npm install axios react-router-dom @types/react-router-dom
+npm install -D tailwindcss postcss autoprefixer
+npm install @tailwindcss/postcss
+
